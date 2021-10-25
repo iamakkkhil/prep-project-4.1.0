@@ -1,6 +1,6 @@
 import React from "react";
 import "./placesNearby.css";
-import HotelCard from "../HotelCard";
+import PlacesCard from "../PlacesCard";
 
 export default class PlacesNearby extends React.Component {
   constructor(props) {
@@ -84,9 +84,9 @@ export default class PlacesNearby extends React.Component {
           var formated_data_RESTURANTS = [];
           for (var i = 0; i < 5; i++) {
             formated_data_RESTURANTS.push({
-              name: data["results"][i]["name"],
-              vicinity: data["results"][i]["vicinity"],
-              rating: data["results"][i]["rating"],
+              name: data.results[i].name,
+              vicinity: data.results[i].vicinity,
+              rating: data.results[i].rating,
             });
           }
           console.log(formated_data_RESTURANTS);
@@ -123,9 +123,9 @@ export default class PlacesNearby extends React.Component {
           var formated_data_LODGES = [];
           for (var i = 0; i < 5; i++) {
             formated_data_LODGES.push({
-              name: data["results"][i]["name"],
-              vicinity: data["results"][i]["vicinity"],
-              rating: data["results"][i]["rating"],
+              name: data.results[i].name,
+              vicinity: data.results[i].vicinity,
+              rating: data.results[i].rating,
             });
           }
           this.setState({
@@ -146,21 +146,21 @@ export default class PlacesNearby extends React.Component {
         {!this.loading && (
           <>
           <div className="heading">
-          <h1 className="heading-h1" id="places">Places NearBy</h1>
+          <h1 className="heading-h1" id="places">Places Nearby</h1>
         </div>
-          <HotelCard places={this.state.placesNearby} loading={this.loading} />
+          <PlacesCard places={this.state.placesNearby} loading={this.loading} />
 
             <div className="heading">
-              <h1 className="heading-h1" id="restaurants">Restaurants NearBy</h1>
+              <h1 className="heading-h1" id="restaurants">Restaurants Nearby</h1>
             </div>
-            <HotelCard
+            <PlacesCard
               places={this.state.restaurantsNearby}
               loading={this.loading}
             />
           <div className="heading">
-          <h1 className="heading-h1" id="hotels">Hotels NearBy</h1>
+          <h1 className="heading-h1" id="hotels">Hotels Nearby</h1>
         </div>
-          <HotelCard places={this.state.lodgingNearby} loading={this.loading} />
+          <PlacesCard places={this.state.lodgingNearby} loading={this.loading} />
           </>
         )}
       </div>

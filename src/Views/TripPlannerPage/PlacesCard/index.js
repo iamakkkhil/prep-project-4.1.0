@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Carousel } from "react-responsive-carousel";
-import "./hotel.css";
+import "./places.css";
 import StarRatings from "react-star-ratings";
 
-const HotelCard = (props) => {
+const PlacesCard = (props) => {
   return (
     <>
       <Carousel
@@ -40,4 +40,4 @@ const HotelCard = (props) => {
   );
 };
 
-export default HotelCard;
+export default PlacesCard;
